@@ -5,7 +5,7 @@ using namespace System::IO;
 
 #include "Stuff.h"
 //#include "../crnlib/inc/crnlib.h"
-#include "../../../Visual Studio 2013/Projects/squish-1.11/squish.h"
+#include "squish.h"
 // C:\\Users\\Faark\\Documents\\Visual Studio 2013\\Projects\\squish-1.11\\squish.h
 
 #include "ITexture.h"

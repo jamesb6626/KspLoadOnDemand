@@ -1,5 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="UserMacros">
+    <!--SQUISH_DIR: The location of LibSquish (required to build)-->
+    <SQUISH_DIR>$(VisualStudioDir)\Projects\squish-1.11</SQUISH_DIR>
+  </PropertyGroup>
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
       <Configuration>Debug</Configuration>
@@ -20,7 +24,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{2324F320-EF46-464C-8D1B-19EBF4895EE7}</ProjectGuid>
-    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <Keyword>ManagedCProj</Keyword>
     <RootNamespace>NetWrapper</RootNamespace>
   </PropertyGroup>
@@ -72,27 +76,27 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
     <OutDir>$(SolutionDir)LoadOnDemand\EmbededResources\</OutDir>
-    <IncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;C:\Users\Faark\Documents\Visual Studio 2013\Projects\squish-1.11\lib\vs9;C:\Users\Faark\Documents\GitHub\KspLoadOnDemand\lib\VC9\Release\Win32\;$(LibraryPath)</LibraryPath>
-    <ExecutablePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(SQUISH_DIR)\lib\vs9;C:\Users\Faark\Documents\GitHub\KspLoadOnDemand\lib\VC9\Release\Win32\;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(DXSDK_DIR)\Lib\x86;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
-    <ExecutablePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(DXSDK_DIR)\Include;$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(DXSDK_DIR)\Lib\x86;$(ExecutablePath)</ExecutablePath>
     <LinkIncremental>true</LinkIncremental>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
     <OutDir>$(SolutionDir)LoadOnDemand\EmbededResources\</OutDir>
-    <IncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;C:\Users\Faark\Documents\Visual Studio 2013\Projects\squish-1.11\lib\vs9;C:\Users\Faark\Documents\GitHub\KspLoadOnDemand\lib\VC9\Release\Win32\;$(LibraryPath)</LibraryPath>
-    <ExecutablePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x86;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(DXSDK_DIR)\Include;$(SQUISH_DIR);$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x86;$(SQUISH_DIR)\lib\vs9;C:\Users\Faark\Documents\GitHub\KspLoadOnDemand\lib\VC9\Release\Win32\;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(DXSDK_DIR)\Lib\x86;$(ExecutablePath)</ExecutablePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Include;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x64;C:\Users\Faark\Documents\Visual Studio 2013\Projects\squish-1.11\lib64\vs9;$(LibraryPath)</LibraryPath>
-    <ExecutablePath>C:\Program Files (x86)\Microsoft DirectX SDK (June 2010)\Lib\x64;$(ExecutablePath)</ExecutablePath>
+    <IncludePath>$(DXSDK_DIR)\Include;$(SQUISH_DIR);$(IncludePath)</IncludePath>
+    <LibraryPath>$(DXSDK_DIR)\Lib\x64;$(SQUISH_DIR)\lib64\vs9;$(LibraryPath)</LibraryPath>
+    <ExecutablePath>$(DXSDK_DIR)\Lib\x64;$(ExecutablePath)</ExecutablePath>
     <LinkIncremental>false</LinkIncremental>
     <TargetName>$(ProjectName)64</TargetName>
     <OutDir>$(SolutionDir)LoadOnDemand\EmbededResources\</OutDir>
